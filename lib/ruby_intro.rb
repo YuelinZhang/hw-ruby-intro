@@ -4,14 +4,24 @@
 
 def sum arr
   # YOUR CODE HERE
+  arr.reduce 0, :+
 end
 
 def max_2_sum arr
   # YOUR CODE HERE
+  sum(arr.sort.last(2))
 end
 
 def sum_to_n? arr, n
   # YOUR CODE HERE
+  if arr.empty?
+    return true if n == 0
+  else 
+    arr.combination(2).to_a.each do |pair|
+      return true if sum(pair) == n
+    end
+  end
+  return false
 end
 
 # Part 2
