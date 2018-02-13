@@ -4,12 +4,21 @@
 
 def sum arr
   # YOUR CODE HERE
+<<<<<<< HEAD
     i = 0
     sum = 0
   for i in 0..arr.length-1
     sum += arr[i]
   end 
     return sum
+=======
+  i = 0
+  sum = 0
+  for i in 0..arr.length-1
+    sum += arr[i]
+  end
+  return sum
+>>>>>>> 22cef0aa59c863a56f6f9f38b7c299a42a9df8fd
 end
 
 def max_2_sum arr
@@ -19,6 +28,7 @@ end
 
 def sum_to_n? arr, n
   # YOUR CODE HERE
+<<<<<<< HEAD
     if arr.empty?
       return false
     end
@@ -41,6 +51,29 @@ def sum_to_n? arr, n
         end
     end
     return false
+=======
+  if arr.empty?
+    return false
+  end
+  len = arr.length
+  if len = 0
+    return n == 0
+  end
+  
+  i = 0
+  j = len-1
+  arr.sort!
+  while i < j
+    if arr[i] + arr[j] == n then
+      return true
+    elsif arr[i] + arr[j] < n then
+      i = i + 1
+    else
+      j = j - 1
+    end
+  end
+  return false    
+>>>>>>> 22cef0aa59c863a56f6f9f38b7c299a42a9df8fd
 end
 
 # Part 2
@@ -48,11 +81,15 @@ end
 def hello(name)
   # YOUR CODE HERE
   "Hello, #{name}"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 22cef0aa59c863a56f6f9f38b7c299a42a9df8fd
 end
 
 def starts_with_consonant? s
   # YOUR CODE HERE
+<<<<<<< HEAD
   #是判断辅音啊
   if s.empty? then return false end
     if (s[0,1]=~/^[aeiou]/ || s[0,1]=~/^[AEIOU]/) then
@@ -62,6 +99,18 @@ def starts_with_consonant? s
       return false
     end
     return true
+=======
+  if s.empty? then 
+    return false
+  end
+  if (s[0,1]=~/^[aeiou]/ || s[0,1]=~/^[AEIOU]/) then
+    return false
+  end
+  if !(s[0,1]=~/[a-zA-Z]/)
+    return false
+  end
+  return true
+>>>>>>> 22cef0aa59c863a56f6f9f38b7c299a42a9df8fd
 end
 
 def binary_multiple_of_4? s
@@ -71,7 +120,11 @@ def binary_multiple_of_4? s
   end
   s = "0b" + s
   s = Integer(s)
+<<<<<<< HEAD
   if s % 4 == 0 then 
+=======
+  if s % 4 == 0 then
+>>>>>>> 22cef0aa59c863a56f6f9f38b7c299a42a9df8fd
     return true
   end
   return false
@@ -81,6 +134,7 @@ end
 
 class BookInStock
 # YOUR CODE HERE
+<<<<<<< HEAD
 def initialize(isbn,price)
   #初始化方法
   raise ArgumentError if isbn.empty? || price <= 0
@@ -95,4 +149,18 @@ end
 
 attr_accessor:isbn
 attr_accessor:price
+=======
+  def initialize(isbn,price)
+    raise ArgumentError if isbn.empty? || price <= 0
+    @isbn=isbn
+    @price=price
+  end
+  
+  def price_as_string
+    format("$%.2f", @price)
+  end
+  
+  attr_accessor:isbn
+  attr_accessor:price
+>>>>>>> 22cef0aa59c863a56f6f9f38b7c299a42a9df8fd
 end
